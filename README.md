@@ -2,7 +2,7 @@
 
 `aliaser` provides a small metaclass and mixin that let you declare call-perfect
 aliases for methods. Apply the `@alias` decorator to a method to expose it under
-multiple names, or use `AliasMixin.add_alias` at runtime to add new aliases.
+multiple names, or use `Aliases.add_alias` at runtime to add new aliases.
 Importing the package automatically registers the `alias` decorator under
 `builtins` so it is always available.
 
@@ -44,6 +44,10 @@ Greeter().howdy()  # also prints "Hello!"
 
 Importing `aliaser` adds the `alias` decorator to `builtins`, so it can be used
 without an explicit import once the package is imported.
+
+This modifies the global namespace. If you prefer to avoid that side effect,
+import `alias` from `aliaser.decorator` and `Aliases` from `aliaser.mixin`
+directly instead of importing the top-level package.
 
 ## Contributing
 
