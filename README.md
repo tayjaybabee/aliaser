@@ -1,5 +1,8 @@
 # aliaser
 ![RTD](https://app.readthedocs.org/projects/aliaser/badge/?version=latest&style=for-the-badge)
+![GitHub Release](https://img.shields.io/github/v/release/tayjaybabee/aliaser?include_prereleases&cacheSeconds=10&style=for-the-badge)
+![PyPI - Version](https://img.shields.io/pypi/v/aliaser?style=for-the-badge)
+
 
 aliaser provides a tiny metaclass and mixin that let you expose call-perfect
 method aliases without writing boilerplate forwarders.
