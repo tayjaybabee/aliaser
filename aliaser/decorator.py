@@ -1,7 +1,7 @@
 """Utility decorator for exposing a method under multiple names."""
 from __future__ import annotations
 from types import FunctionType
-from typing import Callable, Iterable, Hashable
+from typing import Callable, Hashable
 
 
 def alias(*names: Hashable) -> Callable[[FunctionType], FunctionType]:
