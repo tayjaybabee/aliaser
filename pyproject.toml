@@ -1,17 +1,17 @@
 [project]
 name = "aliaser"
-version = "1.0.0-dev.1"
+version = "1.0.0-dev.3"
 description = "Drop-in mix-in + metaclass that let you declare any number of call-perfect aliases for a method with a single decorator or a runtime helper. No boiler-plate forwarders required."
 authors = [
     {name = "Taylor B.",email = "t.blackstone@inspyre.tech"}
 ]
 license = {file = "LICENSE"}
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
 ]
 
-[project.optional-dependencies.docs]
+[toool.poetry.group.docs.dependencies]
 sphinx = "^8.0"
 furo = "^2024.8.6"
 
@@ -21,6 +21,11 @@ furo = "^2024.8.6"
 ipython = "^9.4.0"
 prompt-toolkit = "^3.0.51"
 ptipython = "^1.0.1"
+
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^8.2.3"
+furo = "^2024.8.6"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
