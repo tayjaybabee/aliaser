@@ -1,4 +1,21 @@
-"""Metaclass that injects method aliases declared via :func:`aliaser.decorator.alias`."""
+"""
+
+
+Author: 
+    Inspyre Softworks
+
+Project:
+    aliaser
+
+File: 
+    aliaser/metaclass/alias.py
+ 
+
+Description:
+    
+
+"""
+
 
 class AliasMeta(type):
     """Metaclass that injects method aliases declared via ``@alias``."""
@@ -25,4 +42,3 @@ class AliasMeta(type):
                 setattr(cls, alias_name, attr_val)   # ← same descriptor, no wrapper
 
         return cls
-

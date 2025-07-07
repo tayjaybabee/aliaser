@@ -1,6 +1,6 @@
 [project]
 name = "aliaser"
-version = "1.0.0-dev.3"
+version = "1.0.0-dev.4"
 description = "Drop-in mix-in + metaclass that let you declare any number of call-perfect aliases for a method with a single decorator or a runtime helper. No boiler-plate forwarders required."
 authors = [
     {name = "Taylor B.",email = "t.blackstone@inspyre.tech"}
