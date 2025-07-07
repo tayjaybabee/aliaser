@@ -1,4 +1,5 @@
 # aliaser
+![RTD](https://app.readthedocs.org/projects/aliaser/badge/?version=latest&style=for-the-badge)
 
 aliaser provides a tiny metaclass and mixin that let you expose call-perfect
 method aliases without writing boilerplate forwarders.
