@@ -1,14 +1,31 @@
 # aliaser
 
-`aliaser` provides a small metaclass and mixin that let you declare call-perfect
-aliases for methods. Apply the `@alias` decorator to a method to expose it under
-multiple names, or use `Aliases.add_alias` at runtime to add new aliases.
-Importing the package automatically registers the `alias` decorator under
-`builtins` so it is always available.
+aliaser provides a tiny metaclass and mixin that let you expose call-perfect
+method aliases without writing boilerplate forwarders.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Declaring aliases with `@alias`](#declaring-aliases-with-alias)
+  - [Adding aliases at runtime](#adding-aliases-at-runtime)
+  - [Avoiding the built-ins side effect](#avoiding-the-built-ins-side-effect)
+- [Development](#development)
+- [Supported Python versions](#supported-python-versions)
+- [License](#license)
+
+## Features
+
+- `@alias` decorator to expose a method or property under multiple names.
+- `Aliases` mixin for runtime helpers, backed by the `AliasMeta` metaclass.
+- Property and method aliases share the original descriptor – no wrappers.
+- Automatically registers `alias` on `builtins` when importing the package for
+  drop-in usage.
 
 ## Installation
 
-Install from PyPI with `pip`:
+Install from PyPI:
 
 ```bash
 pip install aliaser
@@ -42,23 +59,28 @@ Greeter.add_alias('hello', 'howdy')
 Greeter().howdy()  # also prints "Hello!"
 ```
 
-Importing `aliaser` adds the `alias` decorator to `builtins`, so it can be used
-without an explicit import once the package is imported.
+### Avoiding the built-ins side effect
 
-This modifies the global namespace. If you prefer to avoid that side effect,
-import `alias` from `aliaser.decorator` and `Aliases` from `aliaser.mixin`
-directly instead of importing the top-level package.
+Importing the top-level package registers `alias` on `builtins` so it can be
+used without an explicit import. This modifies the global namespace. To avoid
+that side effect, import `alias` from `aliaser.decorator` and `Aliases` from
+`aliaser.mixin` directly instead of importing `aliaser`.
 
-## Contributing
+## Development
 
-Contributions are welcome! Please open an issue or submit a pull request on
-GitHub to discuss changes.
+Clone the repository and install dependencies with Poetry:
+
+```bash
+poetry install
+```
+
+After making changes you can build the wheel with `poetry build`. Feel free to
+open issues or pull requests on GitHub to discuss improvements.
 
 ## Supported Python versions
 
-This package requires Python 3.12 or newer.
+This project requires Python 3.12 or newer.
 
 ## License
 
-`aliaser` is distributed under the terms of the MIT License.
-
+`aliaser` is distributed under the MIT License.
