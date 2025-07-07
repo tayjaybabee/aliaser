@@ -1,5 +1,5 @@
 """Mix-in class providing runtime helpers for new aliases."""
-from .metaclasses import AliasMeta
+from .metaclass import AliasMeta
 
 
 class AliasMixin(metaclass=AliasMeta):
