@@ -20,8 +20,8 @@ method aliases without writing boilerplate forwarders.
 - `@alias` decorator to expose a method or property under multiple names.
 - `Aliases` mixin for runtime helpers, backed by the `AliasMeta` metaclass.
 - Property and method aliases share the original descriptor – no wrappers.
-- Automatically registers `alias` on `builtins` when importing the package for
-  drop-in usage.
+- `install()`/`uninstall()` helpers manage registration of `alias` on
+  `builtins`. `install()` runs automatically on import for drop-in usage.
 
 ## Installation
 
@@ -61,10 +61,11 @@ Greeter().howdy()  # also prints "Hello!"
 
 ### Avoiding the built-ins side effect
 
-Importing the top-level package registers `alias` on `builtins` so it can be
-used without an explicit import. This modifies the global namespace. To avoid
-that side effect, import `alias` from `aliaser.decorator` and `Aliases` from
-`aliaser.mixin` directly instead of importing `aliaser`.
+Importing the top-level package calls `aliaser.install()` which registers
+`alias` on `builtins`. This modifies the global namespace. Call
+`aliaser.uninstall()` to undo the side effect, or import `alias` from
+`aliaser.decorator` and `Aliases` from `aliaser.mixin` directly instead of
+importing `aliaser`.
 
 ## Development
 
