@@ -1,20 +1,4 @@
-"""
-
-
-Author: 
-    Inspyre Softworks
-
-Project:
-    aliaser
-
-File: 
-    aliaser/metaclass/alias.py
- 
-
-Description:
-    
-
-"""
+"""Alias harvesting metaclass used by :class:`aliaser.AliasMixin`."""
 
 
 class AliasMeta(type):
