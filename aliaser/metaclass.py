@@ -1,6 +1,5 @@
 """Metaclass that injects method aliases declared via :func:`aliaser.decorator.alias`."""
 
-
 class AliasMeta(type):
     """Metaclass that injects method aliases declared via ``@alias``."""
 
