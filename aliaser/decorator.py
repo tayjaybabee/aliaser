@@ -1,35 +1,23 @@
-"""
-
-
-Author: 
-    Inspyre Softworks
-
-Project:
-    aliaser
-
-File: 
-    aliaser/decorator.py
- 
-
-Description:
-    
-
-"""
+"""Utility decorator for exposing a method under multiple names."""
 from __future__ import annotations
 from types import FunctionType
 from typing import Callable, Iterable, Hashable
 
 
 def alias(*names: Hashable) -> Callable[[FunctionType], FunctionType]:
-    """
-    Parameters:
-        *names: str
-            One or more alternate attribute names that should behave
-            exactly like the decorated method.
+    """Decorate a function with one or more alias names.
 
-    Returns:
-        The original function, annotated with ``_aliases`` so the metaclass
-        can wire things up later.
+    Parameters
+    ----------
+    *names : str
+        Alternate attribute names that should behave exactly like the
+        decorated function.
+
+    Returns
+    -------
+    Callable
+        The original function annotated with ``_aliases`` so the metaclass
+        can wire up the aliases later.
     """
     if not names:
         raise ValueError("At least one alias must be provided")

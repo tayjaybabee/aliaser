@@ -1,20 +1,4 @@
-"""
-
-
-Author: 
-    Inspyre Softworks
-
-Project:
-    aliaser
-
-File: 
-    aliaser/mixin.py
- 
-
-Description:
-    
-
-"""
+"""Mix-in class providing runtime helpers for new aliases."""
 from .metaclass import AliasMeta
 
 
@@ -29,26 +13,28 @@ class AliasMixin(metaclass=AliasMeta):
         overwrite: bool = False,
         strict: bool = True,
     ) -> None:
-        """
-        Dynamically add aliases **after** the class has been created.
+        """Create aliases for an existing attribute at runtime.
 
-        Parameters:
-            target (str):
-                The existing attribute name to alias.
-            *aliases (str):
-                One or more alias names.
-            overwrite: bool, default=False
-                If ``True`` an existing attribute of the same name is
-                overwritten; otherwise, a ``ValueError`` is raised.
-            strict: bool, default=True
-                If ``True`` verifies that *target* exists and is callable.
+        Parameters
+        ----------
+        target : str
+            Existing attribute name to alias.
+        *aliases : str
+            One or more alias names.
+        overwrite : bool, optional
+            Overwrite existing attributes of the same name when ``True``;
+            otherwise a ``ValueError`` is raised. Defaults to ``False``.
+        strict : bool, optional
+            Verify that ``target`` exists and is callable when ``True``.
+            Defaults to ``True``.
 
-        Example Usage:
-            >>> class Greeter(AliasMixin):
-            ...     def hello(self):
-            ...         print("Hi!")
-            ...
-            >>> Greeter.add_alias('hello', 'hi', 'sup')
+        Examples
+        --------
+        >>> class Greeter(AliasMixin):
+        ...     def hello(self):
+        ...         print("Hi!")
+        ...
+        >>> Greeter.add_alias('hello', 'hi', 'sup')
         """
         if strict and not hasattr(cls, target):
             raise ValueError(f"{cls.__name__}.{target} doesn't exist")

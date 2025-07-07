@@ -1,19 +1,9 @@
-"""
+"""Initialize the package and inject the ``alias`` decorator into ``builtins``.
 
-
-Author: 
-    Inspyre Softworks
-
-Project:
-    aliaser
-
-File: 
-    aliaser/__init__.py
- 
-
-Description:
-    
-
+This module exposes the :func:`aliaser.decorator.alias` decorator and the
+:class:`aliaser.mixin.AliasMixin` class.  It also registers ``alias`` on the
+``builtins`` module if it does not already exist so it can be used without an
+explicit import.
 """
 import builtins as _bt
 from .decorator import alias
