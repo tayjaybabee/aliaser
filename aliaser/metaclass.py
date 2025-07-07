@@ -1,17 +1,4 @@
-"""
-Author: 
-    Inspyre Softworks
-
-Project:
-    aliaser
-
-File: 
-    aliaser/metaclass.py
- 
-
-Description:
-
-"""
+"""Metaclass that injects method aliases declared via :func:`aliaser.decorator.alias`."""
 
 
 class AliasMeta(type):
