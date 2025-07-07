@@ -15,4 +15,4 @@ if not hasattr(_bt, "alias"):
     _bt.alias = alias
 
 
-__all__ = ['Aliases']
+__all__ = ['Aliases', 'alias']
