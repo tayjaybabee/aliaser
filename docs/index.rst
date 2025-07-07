@@ -12,5 +12,8 @@ Welcome to the documentation for **aliaser**.
    :maxdepth: 2
    :caption: Contents:
 
+   installation
+   usage
+   development
    api
 
