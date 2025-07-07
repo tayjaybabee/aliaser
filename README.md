@@ -1,7 +1,13 @@
 # aliaser
+![Static Badge](https://img.shields.io/badge/Inspyre-Softworks-blue?style=for-the-badge&logo=poetry)
 ![RTD](https://app.readthedocs.org/projects/aliaser/badge/?version=latest&style=for-the-badge)
+
 ![GitHub Release](https://img.shields.io/github/v/release/tayjaybabee/aliaser?include_prereleases&cacheSeconds=10&style=for-the-badge)
 ![PyPI - Version](https://img.shields.io/pypi/v/aliaser?style=for-the-badge)
+![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Ftayjaybabee%2Faliaser%2Frefs%2Fheads%2Fmaster%2Fpyproject.toml&style=for-the-badge)
+
+![PyPI - Types](https://img.shields.io/pypi/types/aliaser?style=for-the-badge)
+
 
 
 aliaser provides a tiny metaclass and mixin that let you expose call-perfect
